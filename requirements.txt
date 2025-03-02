@@ -1,0 +1,7 @@
+werkzeug==2.3.7
+Flask~=3.1.0
+flask_sqlalchemy
+pandas~=2.2.3
+matplotlib~=3.10.0
+joblib~=1.4.2
+scikit-learn~=1.6.1

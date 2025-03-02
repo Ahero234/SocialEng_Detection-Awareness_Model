@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Email Detector</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center">Phishing Email Detector</h1>
+        <form action="/detect" method="post">
+            <div class="form-group">
+                <label for="email">Enter the email content:</label>
+                <textarea id="email" name="email" class="form-control" rows="5" placeholder="Paste the email here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Check for Phishing</button>
+        </form>
+        {% if prediction %}
+            <div class="alert alert-info mt-3 text-center">{{ prediction }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
