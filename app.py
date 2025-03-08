@@ -13,8 +13,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # BLUEPRINTS
 from backend.detect_model.detect import detect_blueprint 
+from backend.awareness.quiz import quiz_blueprint
+from backend.awareness.education import education_blueprint
 
 app.register_blueprint(detect_blueprint)
+app.register_blueprint(quiz_blueprint)
+app.register_blueprint(education_blueprint)
 
 # HOME PAGE VIEW
 @app.route('/')

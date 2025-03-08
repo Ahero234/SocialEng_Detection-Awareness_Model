@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz - Social Engineering Awareness{% endblock %}
+
+{% block content %}
+<div class="quiz-container">
+    <h1 class="text-center mb-4">Quiz</h1>
+
+    
+
+    <!-- Quiz Question -->
+    <div class="card mx-auto" style="max-width: 600px;">
+        <div class="card-body">
+            <form method="POST">
+                <p class="card-text mb-4">{{ question.question }}</p>
+
+                <div class="options mb-4">
+                    {% for key, option in question.options.items() %}
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="option-{{ key }}" value="{{ key }}" required>
+                        <label class="form-check-label" for="option-{{ key }}">
+                            {{ option }}
+                        </label>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <input type="hidden" name="question" value="{{ question.question }}">
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

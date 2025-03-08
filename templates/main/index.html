@@ -1,12 +1,58 @@
 {% extends "base.html" %}
 
+{% block title %}Home - Social Engineering Awareness{% endblock %}
+
 {% block content %}
+    <!-- Hero Section -->
+    <div class="hero text-center">
+        <h1 class="display-4 fw-bold">Stay Safe from Social Engineering Attacks</h1>
+        <p class="lead">Learn how cybercriminals trick people and how to protect yourself.</p>
+        <a href="{{ url_for('education.education_page') }}" class="btn btn-lg btn-light shadow mt-3">Learn More</a>
+    </div>
 
-<h1 class="title">Social Engineering Awareness and Detection System</h1>
+    <!-- Types of Attacks Section -->
+    <div class="container mt-5">
+        <h2 class="text-center fw-bold text-primary">Types of Social Engineering Attacks</h2>
+        <p class="text-center text-muted mb-4">Understanding common scams helps you stay one step ahead.</p>
 
-<h2 class="subtitle">CSC3094 Project </h2>
+        <div class="row justify-content-center">
+            <!-- Phishing -->
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body text-center">
+                        <i class="bi bi-envelope-exclamation display-4 text-danger"></i>
+                        <h5 class="card-title mt-3 fw-bold">Phishing</h5>
+                        <p class="card-text text-muted">Fake emails and messages designed to steal personal information.</p>
+                    </div>
+                </div>
+            </div>
 
-{#TODO: UPDATE WITH NAME AND STUDENT NUMBER#}
-<p>Your Name ('220448307')</p>
+            <!-- Pretexting -->
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body text-center">
+                        <i class="bi bi-person-badge display-4 text-warning"></i>
+                        <h5 class="card-title mt-3 fw-bold">Pretexting</h5>
+                        <p class="card-text text-muted">Attackers create a false identity to trick victims into giving up sensitive data.</p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Baiting -->
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body text-center">
+                        <i class="bi bi-usb-plug display-4 text-success"></i>
+                        <h5 class="card-title mt-3 fw-bold">Baiting</h5>
+                        <p class="card-text text-muted">Cybercriminals leave malware-infected media to lure victims into installing malicious software.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call-to-Action Button -->
+        <div class="text-center mt-5">
+            <a href="{{ url_for('quiz.quiz_page') }}" class="btn btn-lg btn-primary shadow">Test Your Knowledge</a>
+        </div>
+    </div>
 {% endblock %}

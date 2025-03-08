@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Understanding Social Engineering Threats</h1>
+
+    <section>
+        <h2>1. Phishing</h2>
+        <p>
+            Phishing is a cyber attack where attackers impersonate legitimate organizations via email, text messages, or websites to trick individuals 
+            into providing sensitive information, such as passwords and credit card details.
+        </p>
+        <h3>How to Identify Phishing:</h3>
+        <ul>
+            <li>Look for suspicious sender addresses</li>
+            <li>Hover over links before clicking to verify legitimacy</li>
+            <li>Beware of urgent or threatening language in emails</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Pretexting</h2>
+        <p>
+            Pretexting is a type of social engineering where attackers create a fabricated scenario (pretext) to obtain sensitive information from the target.
+            This often involves impersonating an authority figure, such as IT support or bank representatives.
+        </p>
+        <h3>How to Protect Yourself:</h3>
+        <ul>
+            <li>Verify the identity of unknown callers before sharing information</li>
+            <li>Avoid disclosing sensitive details over the phone or email</li>
+            <li>Contact the official source directly if in doubt</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Baiting</h2>
+        <p>
+            Baiting is when attackers use false promises, such as free software, music, or USB devices, to trick victims into downloading malware or 
+            revealing personal information.
+        </p>
+        <h3>How to Stay Safe:</h3>
+        <ul>
+            <li>Never plug in unknown USB drives</li>
+            <li>Avoid downloading software from untrusted sources</li>
+            <li>Be cautious of "too good to be true" offers</li>
+        </ul>
+    </section>
+
+    <a href="{{ url_for('quiz.quiz_page') }}">Test Your Knowledge with a Quiz</a>
+{% endblock %}
