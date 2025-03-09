@@ -1,12 +1,9 @@
-# IMPORTS 
 from flask import Blueprint, request, render_template
-import pickle  # Assuming model is saved as a .pkl file
+import pickle
 
-# CONFIG
 detect_blueprint = Blueprint("detect", __name__, template_folder="templates")
 
-
-# Load the phishing detection model (modify based on your actual model)
+# Load phishing detection model
 def load_model():
     model = None
     vectorizer = None
@@ -24,18 +21,16 @@ def load_model():
 
 model, vectorizer = load_model()
 
-# Ensure model loaded correctly
+# Ensure model is loaded correctly
 if model is None or vectorizer is None:
     print("Error: Model or vectorizer could not be loaded.")
 
 
-# 🟢 NEW: Handle GET requests properly
 @detect_blueprint.route("/detect", methods=["GET"])
 def detect_form():
-    return render_template("detect/detect.html", result=None)  # No result initially
+    return render_template("detect/detect.html", result=None)
 
 
-# 🟢 Fixed: Handle POST requests separately
 @detect_blueprint.route('/detect', methods=['POST'])
 def detect():
     try:
@@ -47,7 +42,7 @@ def detect():
         vect = vectorizer.transform([message]).toarray()
         prediction = model.predict(vect)[0]
 
-        result = "Phishing Email Detected!" if prediction == 1 else "This email appears safe."
+        result = "Beware! This could potentially be a phishing email!" if prediction == 1 else "This email appears safe."
         return render_template('detect/detect.html', prediction=result)
 
     except Exception as e:
