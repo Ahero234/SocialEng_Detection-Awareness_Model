@@ -1,16 +1,3 @@
-'''@quiz_blueprint.route('/', methods=['GET', 'POST'])
-def quiz():
-    if request.method == 'POST':
-        user_answers = {q: request.form.get(q) for q in range(len(quiz_data))}
-        session['answers'] = user_answers
-        return render_template('results.html', quiz_data=quiz_data, user_answers=user_answers)
-    return render_template('quiz.html', quiz_data=quiz_data)
-
-@quiz_blueprint.route('/results')
-def results():
-    user_answers = session.get('answers', {})
-    return render_template('results.html', quiz_data=quiz_data, user_answers=user_answers)'''
-
 from flask import Flask, render_template, request, session, Blueprint, redirect, url_for
 import random
 

@@ -3,6 +3,36 @@
 {% block title %}Home - Social Engineering Awareness{% endblock %}
 
 {% block content %}
+
+    <!-- Bootstrap Modal for Consent -->
+    <div id="consentModal" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">🔒 Your Privacy Matters</h5>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        This application will <strong>not</strong> collect any personal details, login credentials, or identifying information.  
+                        This tool is purely for educational purposes. Your responses in quizzes and tests will be <strong>completely anonymous</strong>.
+                    </p>
+                    <p class="mb-0"><strong>By continuing, you agree to participate anonymously.</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="consentButton" data-bs-dismiss="modal">I Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Show consent modal every time the website is loaded
+            var consentModal = new bootstrap.Modal(document.getElementById("consentModal"));
+            consentModal.show();
+        });
+    </script>
+
     <!-- Hero Section -->
     <div class="hero text-center">
         <h1 class="display-4 fw-bold">Stay Safe from Social Engineering Attacks</h1>

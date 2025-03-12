@@ -12,9 +12,21 @@
             </div>
             <button type="submit" class="btn btn-primary btn-block">Check for Phishing</button>
         </form>
-        
-        {% if prediction %}
-            <div class="alert alert-info mt-3 text-center">{{ prediction }}</div>
+
+        {% if email_result %}
+            <div class="result">
+                <h2>Email Result:</h2>
+                <p>{{ email_result }}</p>
+            </div>
+        {% endif %}
+
+        {% if url_results %}
+            <div class="result">
+                <h2>URL Results:</h2>
+                {% for result in url_results %}
+                    <p>{{ result }}</p>
+                {% endfor %}
+            </div>
         {% endif %}
     </div>
 {% endblock %}
