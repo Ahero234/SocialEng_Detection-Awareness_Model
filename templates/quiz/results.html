@@ -6,6 +6,31 @@
 <div class="quiz-result-container text-center">
     <h1 class="mb-4">Quiz Results</h1>
     <p class="lead">You scored {{ score }} out of {{ total }}!</p>
-    <a href="{{ url_for('quiz.quiz_page') }}" class="btn btn-primary">Retake Quiz</a>
+
+    <h2 class="mt-4">Review Your Answers</h2>
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Your Answer</th>
+                <th>Correct Answer</th>
+                <th>Result</th>
+                <th>Explanation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in feedback %}
+            <tr class="{% if entry.is_correct %}table-success{% else %}table-danger{% endif %}">
+                <td>{{ entry.question }}</td>
+                <td>{{ entry.user_answer }}</td>
+                <td>{{ entry.correct_answer }}</td>
+                <td>{% if entry.is_correct %}✔ Correct{% else %}✖ Incorrect{% endif %}</td>
+                <td>{{ entry.explanation }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('quiz.quiz_page') }}" class="btn btn-primary mt-3">Retake Quiz</a>
 </div>
 {% endblock %}
