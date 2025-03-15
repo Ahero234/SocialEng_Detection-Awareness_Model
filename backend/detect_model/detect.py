@@ -6,7 +6,6 @@ import tldextract
 
 detect_blueprint = Blueprint("detect", __name__, template_folder="templates")
 
-# Load phishing detection model and vectorizer
 def load_model():
     try:
         with open("backend/model.pkl", "rb") as model_file:
@@ -27,15 +26,13 @@ if model is None or vectorizer is None:
 VIRUSTOTAL_API_KEY = "b58a93c6d67c4081a4c8562a06116f0be64a73ec2118138425c23f64d1286258"
 VIRUSTOTAL_API_URL = "https://www.virustotal.com/api/v3/domains"
 
-# Function to extract URLs from email content
 def extract_urls(text):
     url_pattern = re.compile(r'https?://[^\s<>"]+|www\.[^\s<>"]+')
     return url_pattern.findall(text)
 
-# Function to check domain reputation using VirusTotal API
+# Checks domain reputatuion using Virustotal API
 def check_domain_reputation(url):
     try:
-        # Extract domain from URL
         domain_info = tldextract.extract(url)
         domain = f"{domain_info.domain}.{domain_info.suffix}"
 
@@ -64,16 +61,13 @@ def check_domain_reputation(url):
     except Exception as e:
         return f"❌ API Error: {str(e)}"
 
-# Route to display the detection form
 @detect_blueprint.route("/detect", methods=["GET"])
 def detect_form():
     return render_template("detect/detect.html", email_result=None, url_results=None)
 
-# Route to handle phishing detection
 @detect_blueprint.route("/detect", methods=["POST"])
 def detect():
     try:
-        # Get email content
         email = request.form.get("email", "").strip()
         if not email:
             return render_template("detect/detect.html", email_result="⚠️ Error: Email content is required", url_results=None)
@@ -81,7 +75,6 @@ def detect():
         email_result = None
         url_results = []
 
-        # Check email for phishing using ML model
         vect = vectorizer.transform([email])
         prediction = model.predict(vect)[0]
 

@@ -146,10 +146,32 @@ quiz_data = [
         },
         "correct": "d",
         "explanation": "Attackers often use similar-looking domains (e.g., 'yourcompany-secure.com' instead of 'yourcompany.com') to deceive users."
+    },
+    {
+        "question": "Which of the following is the best way to prevent social engineering attacks?",
+        "options": {
+            "a": "Using a firewall to block hackers",
+            "b": "Installing more antivirus software",
+            "c": "Using a longer password with only numbers",
+            "d": "Training employees on security awareness and best practices"
+        },
+        "correct": "d",
+        "explanation": "While technical defenses are important, social engineering attacks target human psychology. Regular training and awareness programs help employees recognise and avoid these attacks."
+    },
+    {
+        "question": "How can organizations reduce the risk of tailgating attacks?",
+        "options": {
+            "a": "Enforcing strict access control policies and training employees to challenge unknown individuals",
+            "b": "Regualarly keep systems updated and secure",
+            "c": "By using only antivirus software",
+            "d": "Encrypting all email communications"
+        },
+        "correct": "a",
+        "explanation": " Tailgating occurs when an attacker follows an authorised person into a restricted area. Training employees to report unauthorised individuals is the best way to prevent tailgating"
     }
 ]
 
-total_questions = 10 # len(quiz_data)
+total_questions = 10
 
 @quiz_blueprint.route('/quiz', methods=['GET', 'POST'])
 def quiz_page():
@@ -160,9 +182,8 @@ def quiz_page():
     if "feedback" not in session:
         session["feedback"] = []
     if "question_order" not in session or len(session["question_order"]) < total_questions:
-        session["question_order"] = random.sample(quiz_data, total_questions)  # Shuffle unique questions
+        session["question_order"] = random.sample(quiz_data, total_questions)
 
-    # If quiz is complete, redirect to results page
     if session["question_count"] >= total_questions:
         return redirect(url_for('quiz.results_page'))
 
