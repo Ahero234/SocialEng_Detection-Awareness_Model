@@ -26,12 +26,12 @@ if model is None or vectorizer is None:
 VIRUSTOTAL_API_KEY = "b58a93c6d67c4081a4c8562a06116f0be64a73ec2118138425c23f64d1286258"
 VIRUSTOTAL_API_URL = "https://www.virustotal.com/api/v3/domains"
 
-def extract_urls(text):
+def extract_url(text):
     url_pattern = re.compile(r'https?://[^\s<>"]+|www\.[^\s<>"]+')
     return url_pattern.findall(text)
 
 # Checks domain reputatuion using Virustotal API
-def check_domain_reputation(url):
+def check_domain_rep(url):
     try:
         domain_info = tldextract.extract(url)
         domain = f"{domain_info.domain}.{domain_info.suffix}"
@@ -81,10 +81,10 @@ def detect():
         email_result = "⚠️ Potential phishing email detected!" if prediction == 1 else "✅ This email appears safe."
 
         # Extract and check URLs
-        urls = extract_urls(email)
+        urls = extract_url(email)
         if urls:
             for url in urls:
-                reputation = check_domain_reputation(url)
+                reputation = check_domain_rep(url)
                 url_results.append(f"{reputation} - {url}")
         else:
             url_results.append("ℹ️ No URLs found in the email content.")

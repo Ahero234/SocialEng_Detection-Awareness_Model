@@ -6,15 +6,15 @@
 
     <!-- Bootstrap Modal for Consent -->
     <div id="consentModal" class="modal fade" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title fw-bold">🔒 Your Privacy Matters</h5>
                 </div>
                 <div class="modal-body">
                     <p>
                         This application will <strong>not</strong> collect any personal details, login credentials, or identifying information.  
-                        This tool is purely for educational purposes. Your responses in quizzes and tests will be <strong>completely anonymous</strong>.
+                        Your responses in quizzes and tests will be <strong>completely anonymous</strong>.
                     </p>
                     <p class="mb-0"><strong>By continuing, you agree to participate anonymously.</strong></p>
                 </div>
@@ -27,28 +27,41 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Show consent modal every time the website is loaded
-            var consentModal = new bootstrap.Modal(document.getElementById("consentModal"));
-            consentModal.show();
+            setTimeout(function () {
+                var consentModal = new bootstrap.Modal(document.getElementById("consentModal"));
+                consentModal.show();
+            }, 100);
         });
     </script>
 
     <!-- Hero Section -->
-    <div class="hero text-center">
+    <div class="hero text-center text-white py-5" style="background: linear-gradient(to right, #0D6EFD, #00B4DB);">
         <h1 class="display-4 fw-bold">Stay Safe from Social Engineering Attacks</h1>
         <p class="lead">Learn how cybercriminals trick people and how to protect yourself.</p>
-        <a href="{{ url_for('education.education_page') }}" class="btn btn-lg btn-light shadow mt-3">Learn More</a>
     </div>
 
-    <!-- Types of Attacks Section -->
     <div class="container mt-5">
-        <h2 class="text-center fw-bold text-primary">Types of Social Engineering Attacks</h2>
-        <p class="text-center text-muted mb-4">Understanding common scams helps you stay one step ahead.</p>
+        <!-- Section Title -->
+        <h3 class="fw-bold text-dark">What is Social Engineering?</h3>
+
+        <p>
+            Social engineering attack is a <strong>manipulative tactic</strong> used by cybercriminals to deceive people into revealing sensitive information, allowing access to systems that are restricted, or performing activities that threaten security. 
+            Social engineering <strong>targets human psychology</strong>, taking advantage of trust, fear, urgency, or curiosity to trick victims, in contrast to typical cyberattacks that take advantage of software or hardware vulnerabilities.
+        </p>
+
+        <p>
+            These attacks can take many different forms, such as fraudulent phone calls emails, USB drives that are infected with malware and left in public areas, etc. 
+            To gain trust, attackers frequently take on the identities of trusted individuals such as IT support employees, managers, or even law enforcement.
+        </p>
+
+        <p>
+            Below are some of <strong>most common types of social engineering attacks:</strong>
+        </p>
 
         <div class="row justify-content-center">
             <!-- Phishing -->
             <div class="col-md-4">
-                <div class="card shadow-lg border-0">
+                <div class="card shadow-lg border-0 h-100 card-hover">
                     <div class="card-body text-center">
                         <i class="bi bi-envelope-exclamation display-4 text-danger"></i>
                         <h5 class="card-title mt-3 fw-bold">Phishing</h5>
@@ -59,7 +72,7 @@
 
             <!-- Pretexting -->
             <div class="col-md-4">
-                <div class="card shadow-lg border-0">
+                <div class="card shadow-lg border-0 h-100 card-hover">
                     <div class="card-body text-center">
                         <i class="bi bi-person-badge display-4 text-warning"></i>
                         <h5 class="card-title mt-3 fw-bold">Pretexting</h5>
@@ -70,7 +83,7 @@
 
             <!-- Baiting -->
             <div class="col-md-4">
-                <div class="card shadow-lg border-0">
+                <div class="card shadow-lg border-0 h-100 card-hover">
                     <div class="card-body text-center">
                         <i class="bi bi-usb-plug display-4 text-success"></i>
                         <h5 class="card-title mt-3 fw-bold">Baiting</h5>
@@ -82,7 +95,62 @@
 
         <!-- Call-to-Action Button -->
         <div class="text-center mt-5">
-            <a href="{{ url_for('quiz.quiz_page') }}" class="btn btn-lg btn-primary shadow">Test Your Knowledge</a>
+            <a href="{{ url_for('education.education_page') }}" class="btn btn-lg btn-primary shadow">Learn More</a>
+        </div>
+
+        <hr class="my-5">
+
+        <h3 class="fw-bold text-dark">Why is Social Engineering So Dangerous?</h3>
+        <p> Social Engineering attacks tend to be successful because they go over conventional security protocols. 
+            If an employee thinks the request is genuine, they will voluntarily give up their password despite the most advanced firewalls and antivirus programs.
+            Approximately 68% of security breaches involve human errors. 
+            This statistic highlights the ongoing vulnerability of individuals/organisations to cybersecurity breaches which often occur due to human errors, such as weak passwords or falling victim to deceptive tactics used by cybercriminals.</p>
+
+        <hr class="my-5">
+
+        <h3 class="fw-bold text-dark">How Can You Protect Yourself?</h3>
+        <p>
+            Because social engineering preys on human behavior, awareness and caution are the best defenses. Here'ss how you can stay safe:
+        </p>
+        <li> Do not click on suspicious links or download unknown attachments.</li>
+        <li> Educate yourself and your team on common scams and red flags.</li>
+        <li> Be skeptical of urgent or unusual requests, even from seemingly trusted sources.</li>
+        <li> Use multi-factor authentication (MFA) to protect accounts from unauthorised access.</li>
+        
+        <hr class="my-5">
+
+        <!-- Email Attack Warning Section -->
+        <h3 class="fw-bold text-danger"> Recognizing Suspicious Emails</h3>
+        <p class="lead text-muted">Many social engineering attacks start with an email that looks legitimate.</p>
+
+        <div class="alert alert-warning p-4">
+            <h5 class="fw-bold"><i class="bi bi-exclamation-triangle-fill text-danger"></i> Red Flags in Emails:</h5>
+            <ul class="list-unstyled">
+                <li><i class="bi bi-arrow-right-circle-fill text-danger"></i> <strong>Urgency or threats</strong> (e.g., "Your account will be closed!")</li>
+                <li><i class="bi bi-arrow-right-circle-fill text-danger"></i> <strong>Requests for personal or financial information</strong></li>
+                <li><i class="bi bi-arrow-right-circle-fill text-danger"></i> <strong>Suspicious sender addresses</strong> (e.g., `"yourcompany-secure.com" instead of "yourcompany.com"`) </li>
+                <li><i class="bi bi-arrow-right-circle-fill text-danger"></i> <strong>Unknown and insecure links</strong></li>
+            </ul>
+        </div>
+
+        <p>Use the built-in <strong>email detector model</strong> to analyse suspicious emails:</p>
+        <div class="text-center">
+            <a href="{{ url_for('detect.detect') }}" class="btn btn-lg btn-danger shadow mt-3">Detect Malicious Emails</a>
         </div>
     </div>
+
+    <style>
+        .card-hover {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .alert-warning {
+            background: #fff3cd;
+            border-left: 5px solid #ffcc00;
+        }
+    </style>
+
 {% endblock %}

@@ -1,49 +1,165 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Understanding Social Engineering Threats</h1>
+<div class="container mt-5">
+    <h1 class="text-center fw-bold">Understanding Types of Social Engineering Threats</h1>
+    <p class="text-center text-muted">Learn how attackers manipulate individuals to steal sensitive information and how to defend against these attacks.</p>
 
-    <section>
-        <h2>1. Phishing</h2>
-        <p>
-            Phishing is a cyber attack where attackers impersonate legitimate organizations via email, text messages, or websites to trick individuals 
-            into providing sensitive information, such as passwords and credit card details.
-        </p>
-        <h3>How to Identify Phishing:</h3>
-        <ul>
-            <li>Look for suspicious sender addresses</li>
-            <li>Hover over links before clicking to verify legitimacy</li>
-            <li>Beware of urgent or threatening language in emails</li>
-        </ul>
-    </section>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Phishing -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title"><i class="bi bi-envelope-exclamation text-danger"></i> Phishing</h3>
+                    <p class="card-text flex-grow-1">
+                        Phishing is an attack where cybercriminals disguise themselves as trustworthy entities (banks, companies, colleagues) to steal personal details, passwords, or financial data.
+                    </p>
+                    <h4 class="fw-bold">How to Identify Phishing:</h4>
+                    <ul>
+                        <li>Check sender addresses for inconsistencies.</li>
+                        <li>Hover over links before clicking.</li>
+                        <li>Beware of urgent or threatening messages.</li>
+                        <li>Look for spelling and grammar mistakes.</li>
+                    </ul>
+                    <h4 class="fw-bold"><i class="bi bi-pin-angle text-danger"></i> Spear Phishing</h4>
+                    <p>
+                        A more targeted version of phishing where attackers research their victims and personalize messages to appear even more legitimate.
+                    </p>
+                    <h5 class="fw-bold">How to Spot Spear Phishing:</h5>
+                    <ul>
+                        <li>Emails reference personal details that aren't public.</li>
+                        <li>Messages appear to come from someone you trust.</li>
+                        <li>Requests for immediate action (e.g., "update your account now!").</li>
+                        <li>Verify requests for sensitive data by contacting the sender directly.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-    <section>
-        <h2>2. Pretexting</h2>
-        <p>
-            Pretexting is a type of social engineering where attackers create a fabricated scenario (pretext) to obtain sensitive information from the target.
-            This often involves impersonating an authority figure, such as IT support or bank representatives.
-        </p>
-        <h3>How to Protect Yourself:</h3>
-        <ul>
-            <li>Verify the identity of unknown callers before sharing information</li>
-            <li>Avoid disclosing sensitive details over the phone or email</li>
-            <li>Contact the official source directly if in doubt</li>
-        </ul>
-    </section>
+        <!-- Pretexting -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title"><i class="bi bi-person-badge text-warning"></i> Pretexting</h3>
+                    <p class="card-text flex-grow-1">
+                        The attacker creates a plausible but fake scenario to manipulate the victim into revealing sensitive information. 
+                        This technique relies on building trust and credibility, often by impersonating someone of higher authority such as, IT staff, bank officials, or law enforcement.
+                        The attackers use psychological tactics to create a sense of urgency and legitimacy to deceive their victims.
+                    </p>
+                    <h4 class="fw-bold">Common Pretexting Techniques:</h4>
+                    <ul>
+                        <li>Fake IT support calls asking for login credentials.</li>
+                        <li>Scammers posing as HR requesting personal details.</li>
+                        <li>Impersonating banks to "verify" account information.</li>
+                    </ul>
+                    <h5 class="fw-bold">How to Protect Yourself:</h5>
+                    <ul>
+                        <li>Verify unknown callers before sharing details.</li>
+                        <li>Never disclose passwords or personal information over the phone.</li>
+                        <li>Contact the organization directly to confirm legitimacy.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-    <section>
-        <h2>3. Baiting</h2>
-        <p>
-            Baiting is when attackers use false promises, such as free software, music, or USB devices, to trick victims into downloading malware or 
-            revealing personal information.
-        </p>
-        <h3>How to Stay Safe:</h3>
-        <ul>
-            <li>Never plug in unknown USB drives</li>
-            <li>Avoid downloading software from untrusted sources</li>
-            <li>Be cautious of "too good to be true" offers</li>
-        </ul>
-    </section>
+        <!-- Baiting -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title"><i class="bi bi-usb-plug text-success"></i> Baiting</h3>
+                    <p class="card-text flex-grow-1">
+                        Attackers use physical or digital "bait" (free USBs, software, downloads) to trick victims into installing malware or revealing information.
+                    </p>
+                    <h4 class="fw-bold">Examples of Baiting:</h4>
+                    <ul>
+                        <li>Leaving infected USB drives labeled "Confidential" in public places.</li>
+                        <li>Offering free music, movies, or software downloads laced with malware.</li>
+                        <li>Fake pop-up ads tricking users into clicking dangerous links.</li>
+                    </ul>
+                    <h5 class="fw-bold">How to Stay Safe:</h5>
+                    <ul>
+                        <li>Never plug in unknown USB devices.</li>
+                        <li>Download software only from trusted sources.</li>
+                        <li>Avoid "too good to be true" offers online.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-    <a href="{{ url_for('quiz.quiz_page') }}">Test Your Knowledge with a Quiz</a>
+        <!-- Tailgating -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title"><i class="bi bi-door-closed text-primary"></i> Tailgating (Piggybacking)</h3>
+                    <p class="card-text flex-grow-1">
+                        An unauthorised person closely follows an authorised person into an area containing sensitive information or valuable assets in person.
+                        But tailgating can also be a digital tactic, such as when a person leaves a computer unattended while still logged in to a private account or network.</p>
+                    <h4 class="fw-bold">Common Tailgating Techniques:</h4>
+                    <ul>
+                        <li>Pretending to have forgotten their ID badge.</li>
+                        <li>Carrying items to appear in need of help (e.g., "Can you hold the door for me?").</li>
+                    </ul>
+                    <h5 class="fw-bold">How to Prevent Tailgating:</h5>
+                    <ul>
+                        <li>Ensure doors close behind you in secure areas.</li>
+                        <li>Challenge individuals who attempt to enter without verification.</li>
+                        <li>Report suspicious activity to security.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ATM Skimming -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title"><i class="bi bi-credit-card-2-front text-danger"></i> ATM Skimming</h3>
+                    <p class="card-text flex-grow-1">
+                        Attackers attach small devices to ATMs to steal card details and PINs.
+                    </p>
+                    <h4 class="fw-bold">How ATM Skimming Works:</h4>
+                    <ul>
+                        <li>Fake card readers copy your card information.</li>
+                        <li>Hidden cameras record PIN entries.</li>
+                        <li>Skimmers may be installed on gas station payment terminals.</li>
+                    </ul>
+                    <h5 class="fw-bold">How to Stay Safe:</h5>
+                    <ul>
+                        <li>Inspect ATMs for loose or unusual attachments.</li>
+                        <li>Cover your PIN when entering it.</li>
+                        <li>Use ATMs in well-lit, high-traffic areas.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quid Pro Quo Attacks -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title"><i class="bi bi-gift text-dark"></i> Quid Pro Quo Attacks</h3>
+                    <p class="card-text flex-grow-1">
+                        Attackers offer something valuable (e.g., free software, fake IT support) in exchange for sensitive information.
+                    </p>
+                    <h4 class="fw-bold">Examples of Quid Pro Quo Attacks:</h4>
+                    <ul>
+                        <li>Scammers posing as "Microsoft Support" asking for login details.</li>
+                        <li>Fake "research surveys" asking for personal data.</li>
+                    </ul>
+                    <h5 class="fw-bold">How to Protect Yourself:</h5>
+                    <ul>
+                        <li>Never provide credentials in exchange for "free services."</li>
+                        <li>Verify IT support calls with your organization.</li>
+                        <li>Be cautious of unsolicited help or offers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call-to-Action -->
+    <div class="text-center mt-5">
+        <a href="{{ url_for('quiz.quiz_page') }}" class="btn btn-lg btn-primary shadow">Test Your Knowledge with a Quiz</a>
+    </div>
+</div>
 {% endblock %}
