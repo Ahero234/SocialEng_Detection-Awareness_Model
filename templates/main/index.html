@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <!-- Bootstrap Modal for Consent -->
+    <!-- Consent Pop Up-->
     <div id="consentModal" class="modal fade" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -34,15 +34,13 @@
         });
     </script>
 
-    <!-- Hero Section -->
     <div class="hero text-center text-white py-5" style="background: linear-gradient(to right, #0D6EFD, #00B4DB);">
         <h1 class="display-4 fw-bold">Stay Safe from Social Engineering Attacks</h1>
         <p class="lead">Learn how cybercriminals trick people and how to protect yourself.</p>
     </div>
 
     <div class="container mt-5">
-        <!-- Section Title -->
-        <h3 class="fw-bold text-dark">What is Social Engineering?</h3>
+        <h3 class="fw-bold">What is Social Engineering?</h3>
 
         <p>
             Social engineering attack is a <strong>manipulative tactic</strong> used by cybercriminals to deceive people into revealing sensitive information, allowing access to systems that are restricted, or performing activities that threaten security. 
@@ -93,14 +91,13 @@
             </div>
         </div>
 
-        <!-- Call-to-Action Button -->
         <div class="text-center mt-5">
             <a href="{{ url_for('education.education_page') }}" class="btn btn-lg btn-primary shadow">Learn More</a>
         </div>
 
         <hr class="my-5">
 
-        <h3 class="fw-bold text-dark">Why is Social Engineering So Dangerous?</h3>
+        <h3 class="fw-bold">Why is Social Engineering So Dangerous?</h3>
         <p> Social Engineering attacks tend to be successful because they go over conventional security protocols. 
             If an employee thinks the request is genuine, they will voluntarily give up their password despite the most advanced firewalls and antivirus programs.
             Approximately 68% of security breaches involve human errors. 
@@ -108,7 +105,7 @@
 
         <hr class="my-5">
 
-        <h3 class="fw-bold text-dark">How Can You Protect Yourself?</h3>
+        <h3 class="fw-bold">How Can You Protect Yourself?</h3>
         <p>
             Because social engineering preys on human behavior, awareness and caution are the best defenses. Here'ss how you can stay safe:
         </p>
@@ -119,18 +116,17 @@
         
         <hr class="my-5">
 
-        <!-- Email Attack Warning Section -->
         <h3 class="fw-bold text-danger"> Recognizing Suspicious Emails</h3>
         <p class="lead text-muted">Many social engineering attacks start with an email that looks legitimate.</p>
 
         <div class="alert alert-warning p-4">
             <h5 class="fw-bold"><i class="bi bi-exclamation-triangle-fill text-danger"></i> Red Flags in Emails:</h5>
-            <ul class="list-unstyled">
-                <li><i class="bi bi-arrow-right-circle-fill text-danger"></i> <strong>Urgency or threats</strong> (e.g., "Your account will be closed!")</li>
-                <li><i class="bi bi-arrow-right-circle-fill text-danger"></i> <strong>Requests for personal or financial information</strong></li>
-                <li><i class="bi bi-arrow-right-circle-fill text-danger"></i> <strong>Suspicious sender addresses</strong> (e.g., `"yourcompany-secure.com" instead of "yourcompany.com"`) </li>
-                <li><i class="bi bi-arrow-right-circle-fill text-danger"></i> <strong>Unknown and insecure links</strong></li>
-            </ul>
+            
+            <li> <strong>Urgency or threats</strong> (e.g., "Your account will be closed!")</li>
+            <li> <strong>Requests for personal or financial information</strong></li>
+            <li> <strong>Suspicious sender addresses</strong> (e.g., `"yourcompany-secure.com" instead of "yourcompany.com"`) </li>
+            <li> <strong>Unknown and insecure links</strong></li>
+            
         </div>
 
         <p>Use the built-in <strong>email detector model</strong> to analyse suspicious emails:</p>
