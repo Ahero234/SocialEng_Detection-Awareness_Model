@@ -168,6 +168,28 @@ quiz_data = [
         },
         "correct": "a",
         "explanation": " Tailgating occurs when an attacker follows an authorised person into a restricted area. Training employees to report unauthorised individuals is the best way to prevent tailgating"
+    },
+    {
+        "question": "What is the main goal of a Watering Hole Attack?",
+        "options": {
+            "a": "To install keyloggers on a victim's personal device",
+            "b": "To trick victims into inserting malicious USB devices",
+            "c": "To infect a commonly visited website and compromise its visitors",
+            "d": "To manipulate victims into revealing personal information via email"
+        },
+        "correct": "c",
+        "explanation": "The primary goal of a Watering Hole Attack is to compromise a legitimate website frequently used by a target group. Once the site is infected with malware, visitors unknowingly download malicious code, allowing attackers to gain access to their systems."
+    },
+    {
+        "question": "Which of the following is NOT a characteristic of a Watering Hole Attack?",
+        "options": {
+            "a": "Exploiting software vulnerabilities on compromised sites",
+            "b": "Injecting malware into legitimate websites to infect visitors",
+            "c": "Targeting frequently visited websites of specific groups",
+            "d": "Sending phishing emails to individuals within an organization"
+        },
+        "correct": "d",
+        "explanation": "A Watering Hole Attack relies on compromising websites, not on sending phishing emails. Phishing is a separate attack method that tricks victims into clicking malicious links or downloading infected attachments. Watering Hole Attacks do not rely on direct communication with the victim."
     }
 ]
 
