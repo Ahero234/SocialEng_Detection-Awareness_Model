@@ -30,12 +30,12 @@ def clean_text(text):
 
 df['cleaned_text'] = df['body'].apply(clean_text)
 
-# Remove very short and very long emails
+# Remove very short emails
 df = df[df['cleaned_text'].str.len() > 20]
 
-# Ensure both classes remain after filtering
+# Ensure both classifications remain after filtering to avoid training crashes
 if df['label'].nunique() < 2:
-    print("Warning: Only one class remains after filtering. Adjusting thresholds...")
+    print("Warning: Only one class remains after filtering. Adjusting length thresholds...")
     df = df[df['cleaned_text'].str.len() > 10]
 
 X = df['cleaned_text']

@@ -78,7 +78,10 @@ def detect():
         vect = vectorizer.transform([email])
         prediction = model.predict(vect)[0]
 
-        email_result = "⚠️ Potential phishing email detected!" if prediction == 1 else "✅ This email appears safe."
+        if prediction == 1:
+            email_result = "⚠️ Potential phishing email detected!"  
+        else: 
+            email_result = "✅ This email appears safe."
 
         # Extract and check URLs
         urls = extract_url(email)

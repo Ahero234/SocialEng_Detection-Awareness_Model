@@ -53,7 +53,7 @@ support@secure-paypal.com
 
 Hi Nitin,
 
-We have detected unusual login attempts on your university email account from an unrecognized location. To ensure the security of your account, we require you to verify your credentials immediately.
+We have detected unusual login attempts on your university email account from an unrecognised location. To ensure the security of your account, we require you to verify your credentials immediately.
 
 Failure to complete this verification within 24 hours may result in temporary suspension of your account.
 
@@ -110,9 +110,11 @@ support@hsbc.com
 
 Hey Nitin,
 
-Hope everything's going great with you! Just wanted to check in about the meeting on Friday. Are you still good to join at 2 PM? I have attached the meeting link below for you to join. If that time doesn’t work anymore, just let me know and I will update the calendar invite.
+Hope everything's going great with you! 
 
-https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZjFkOTI1YzctYzAzNC00MjM0LWE5ZmQtMTI4MDMzZWJmNGZj%40thread.v2/0?context=%7b%22Tid%22%3a%229c5012c9-b616-44c2-a917-66814fbe3e87%22%2c%22Oid%22%3a%22b8334755-92f4-4890-8782-bc4ef0ccb678%22%7d
+Just wanted to check in about the meeting on Friday. Are you still good to join at 2 PM? I have attached the meeting link below for you to join. If that time doesn’t work anymore, just let me know and I will update the calendar invite.
+
+https://teams.microsoft.com/l/meetup-join/
  
 Looking forward to catching up soon!
 
@@ -127,7 +129,7 @@ Hop you are well! I tried to send you an important document, but there was an is
 
 Please click the link below immediately to confirm your information:
 
-http://tinyurl.com/c5br4qc
+http://tinyurl.com/1234567
 
 Let me know once it’s done.
 

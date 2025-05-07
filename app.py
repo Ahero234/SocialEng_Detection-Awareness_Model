@@ -2,8 +2,6 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'LongAndRandomSecretKey'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lottery.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Blueprints
 from backend.detect_model.detect import detect_blueprint 
